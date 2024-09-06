@@ -1,0 +1,28 @@
+Quick Guide to OpenWeatherMap REST API
+-------------------------------------------
+
+BASE URI - Requests begin with path segments, then you specify an API key.  The link below uses their special sample API key, which always returns the weather for London (no matter what location you specify).
+
+https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22
+
+The string following the 'appid=' is an API key
+
+Examples:
+
+Hourly Weather:
+http://samples.openweathermap.org/data/2.5/forecast/hourly?q=London,us&mode=xml&appid=b6907d289e10d714a6e88b30761fae22
+
+7 day Forecast:
+https://samples.openweathermap.org/data/2.5/forecast/daily?id=524901&appid=b1b15e88fa797225412429c1c50c122a1
+
+Current Weather:
+http://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22
+
+-----
+
+General Format:
+
+GET http://api.openweathermap.org/data/2.5/FEATURE/[OPTIONAL-QUALIFIERS]?q={city name},{country code}&appid=API_KEY[&OPTIONS]
+
+For more information on their API see:
+https://openweathermap.org/api

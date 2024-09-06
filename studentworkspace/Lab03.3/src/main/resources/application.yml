@@ -1,0 +1,9 @@
+# TODO: Add the javatunes.default.search property
+javatunes:
+  default:
+    search: atiya
+
+# TODO: turn banner off with property
+spring:
+  main.banner-mode: console
+

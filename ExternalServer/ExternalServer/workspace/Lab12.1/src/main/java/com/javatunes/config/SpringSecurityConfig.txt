@@ -1,0 +1,44 @@
+/*
+ * This code is sample code, provided as-is, and we make NO 
+ * warranties as to its correctness or suitability for any purpose.
+ * 
+ * We hope that it's useful to you. Enjoy. 
+ * Copyright LearningPatterns Inc.
+ */
+ 
+package com.javatunes.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
+// Declare as a configuration class
+@Configuration
+@EnableWebSecurity
+public class SpringSecurityConfig  extends WebSecurityConfigurerAdapter  {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+            .formLogin()
+                .permitAll();
+    }
+
+    
+	@Bean
+	@SuppressWarnings( "deprecation" )
+	public UserDetailsService userDetailsService()  {
+		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+		// Note withDefaultPasswordEncoder() is only deprecated to indicate not safe for production - fine for demos.
+		manager.createUser(User.withDefaultPasswordEncoder().username("user").password("newPassword").roles("USER").build());
+		return manager;
+	}    
+}

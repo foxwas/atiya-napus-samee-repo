@@ -1,0 +1,17 @@
+We'll point you to some mapping APIs - we won't go into the details here (too lengthy).
+
+TomTom mapping API
+------------------
+https://developer.tomtom.com/content/maps-api-explorer
+There are several types of data.  If you click on their GET button, you'll see a "Try it out" button - so try it :-)
+
+
+here mapping
+------------
+Map Image example.
+https://developer.here.com/documentation/map-image/topics/quick-start-show-default-location.html
+
+Many other examples.
+https://developer.here.com/api-explorer/rest/map-image/basic-map-image
+
+

@@ -1,0 +1,1 @@
+-Dspring.config.location=classpath:/jdbc.yml,classpath:/application.yml,classpath:/config/application.properties

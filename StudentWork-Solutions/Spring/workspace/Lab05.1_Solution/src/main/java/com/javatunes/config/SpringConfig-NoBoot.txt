@@ -1,0 +1,53 @@
+/*
+ * This code is sample code, provided as-is, and we make NO 
+ * warranties as to its correctness or suitability for any purpose.
+ * 
+ * We hope that it's useful to you. Enjoy. 
+ * Copyright LearningPatterns Inc.
+ */
+ 
+package com.javatunes.config;
+
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+@Configuration
+// Annotation to enable access to the jdbc.properties file (assume this holds appropriate props for your DB).
+@PropertySource("classpath:jdbc.properties")
+public class SpringRepositoryConfig {
+
+	// Inject the Environment
+	@Autowired
+	private Environment env; 
+	
+	// Complete - nothing you need to do in this method
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer
+	propertySourcesPlaceholderConfigurer() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
+
+	@Bean DataSource javatunesDataSource() {
+		DriverManagerDataSource ds = new DriverManagerDataSource();
+
+		// DONE: get the "url" property and add it to the DS
+		ds.setUrl(env.getProperty("javatunes.url"));  
+
+		ds.setDriverClassName(env.getProperty("javatunes.driverClassName"));
+		ds.setUsername(env.getProperty("javatunes.dbUserName"));
+		ds.setPassword(env.getProperty("javatunes.password"));
+
+
+		return ds;
+	}
+
+}

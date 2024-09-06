@@ -1,0 +1,7 @@
+# DONE: Add the javatunes.default.search property
+javatunes:
+  default.search: Madonna
+# DONE: turn banner off with property
+spring:
+  main.banner-mode: 'off'
+

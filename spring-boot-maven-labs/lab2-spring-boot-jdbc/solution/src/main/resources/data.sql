@@ -1,0 +1,6 @@
+insert into PURCHASE (CUSTOMERNAME, PRODUCT, PURCHASEDATE)
+values('Bruce','Mountain Bike','2024-05-12 00:00:00.0');
+insert into PURCHASE (CUSTOMERNAME, PRODUCT, PURCHASEDATE)
+values('Paul','Football','2024-04-30 00:00:00.0');
+insert into PURCHASE (CUSTOMERNAME, PRODUCT, PURCHASEDATE)
+values('Rick','Kayak','2024-06-05 00:00:00.0');
